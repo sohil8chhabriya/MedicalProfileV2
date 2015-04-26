@@ -22,6 +22,7 @@ public class User {
     //todo private UserContactDetails userContactDetails;
 
     //ContactDetails Below
+    @Column(name="streetaddress")
     private String address;
     private int pincode;
     private String city;
