@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +22,18 @@ import java.net.URI;
  * Created by sohil chhabriya on 25-Apr-15.
  */
 
+@Controller
 @RequestMapping("/rest/user")
 public class UserController {
     public UserService userService;
 
     @Autowired
     public UserController(UserService userService){ this.userService = userService;}
+
+    @RequestMapping(value="/test", method = RequestMethod.GET)
+    public void hello(){
+       System.out.print("helloWorld");
+    }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<UserResources> getUserById(@PathVariable int id){
