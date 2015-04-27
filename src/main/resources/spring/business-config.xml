@@ -47,4 +47,6 @@
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
 
+    <context:component-scan base-package="mprofile.services.impl"/>
+
 </beans>

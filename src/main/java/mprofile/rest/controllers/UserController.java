@@ -6,6 +6,7 @@ import mprofile.rest.resources.UserResources;
 import mprofile.rest.resources.asm.UserResourcesAsm;
 import mprofile.services.UserService;
 import mprofile.services.exception.UserExistsException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +24,13 @@ import java.net.URI;
 @RequestMapping("/rest/user")
 public class UserController {
     public UserService userService;
+
+    @Autowired
     public UserController(UserService userService){ this.userService = userService;}
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<UserResources> getUserById(@PathVariable int id){
+        System.out.println("into rest client");
         User user = userService.getUserById(id);
         if (user != null){
             UserResources userResources = new UserResourcesAsm().toResource(user);
