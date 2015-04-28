@@ -47,7 +47,7 @@ public class UserController {
             return new ResponseEntity<UserResources>(HttpStatus.NOT_FOUND);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    /*@RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<UserResources> addUser(@RequestBody UserResources addUser){
      try{
         User user = userService.addUser(addUser.toUser());
@@ -70,5 +70,5 @@ public class UserController {
         else
             return new ResponseEntity<UserResources>(HttpStatus.NOT_FOUND);
     }
-
+*/
 }
