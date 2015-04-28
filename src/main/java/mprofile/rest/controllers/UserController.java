@@ -1,22 +1,17 @@
 package mprofile.rest.controllers;
 
 import mprofile.entity.User;
-import mprofile.rest.exceptions.ConflictException;
 import mprofile.rest.resources.UserResources;
 import mprofile.rest.resources.asm.UserResourcesAsm;
 import mprofile.services.UserService;
-import mprofile.services.exception.UserExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.net.URI;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by sohil chhabriya on 25-Apr-15.
@@ -31,8 +26,8 @@ public class UserController {
     public UserController(UserService userService){ this.userService = userService;}
 
     @RequestMapping(value="/test", method = RequestMethod.GET)
-    public void hello(){
-       System.out.print("helloWorld");
+    public void hello(ModelAndView modelAndView){
+       System.out.print("helloWorld" + modelAndView.getViewName());
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -41,10 +36,12 @@ public class UserController {
         User user = userService.getUserById(id);
         if (user != null){
             UserResources userResources = new UserResourcesAsm().toResource(user);
+            System.out.println("==>  "+userResources.toString());
             return new ResponseEntity<UserResources>(userResources, HttpStatus.OK);
         }
-        else
+        else {
             return new ResponseEntity<UserResources>(HttpStatus.NOT_FOUND);
+        }
     }
 
     /*@RequestMapping(method = RequestMethod.POST)

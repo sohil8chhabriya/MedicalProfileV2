@@ -3,12 +3,10 @@ package mprofile.rest.resources;
 import mprofile.entity.User;
 import org.springframework.hateoas.ResourceSupport;
 
-import javax.annotation.Resource;
-
 /**
  * Created by sohil chhabriya on 25-Apr-15.
  */
-@Resource
+
 public class UserResources extends ResourceSupport {
 
     public User toUser(){
