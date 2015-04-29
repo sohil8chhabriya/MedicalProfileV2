@@ -7,6 +7,6 @@ import mprofile.entity.User;
  */
 public interface UserService {
     public User getUserById(int id);
-    public User getUserByPhone(int phone);
+    public User getUserByName(String name);
     public User addUser(User user);
 }

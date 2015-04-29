@@ -7,7 +7,7 @@ import org.springframework.hateoas.ResourceSupport;
  * Created by sohil chhabriya on 25-Apr-15.
  */
 
-public class UserResources extends ResourceSupport {
+public class UserResource extends ResourceSupport {
 
     public User toUser(){
         User user = new User();
@@ -22,6 +22,7 @@ public class UserResources extends ResourceSupport {
         user.setEmailId(emailId);
         user.setCity(city);
         user.setDateOfBirth(dateOfBirth);
+        user.setDateOfRegistration(dateOfRegistration);
         return user;
     }
     private String name;

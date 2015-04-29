@@ -3,7 +3,6 @@ package mprofile.services.impl;
 import mprofile.entity.User;
 import mprofile.repository.UserDao;
 import mprofile.services.UserService;
-import mprofile.services.exception.UserDoesNotExistException;
 import mprofile.services.exception.UserExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +25,8 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User getUserByPhone(int phone) {
-        return user.getUserByPhone(phone);
+    public User getUserByName(String name) {
+        return user.getUserByName(name);
     }
 
     @Override

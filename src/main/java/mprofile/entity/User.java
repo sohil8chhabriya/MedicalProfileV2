@@ -3,13 +3,14 @@ package mprofile.entity;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by sohil chhabriya on 25-Apr-15.
  */
 @Entity
 @Table(name = "userinfo" )
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue
     private int id;
