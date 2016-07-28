@@ -1,5 +1,7 @@
 pre-requisit:
-install mysql,
+install notepad++
+install mysql workbench,
+install SQLyog,
 isntall idea,
 install git,
 install maven,
