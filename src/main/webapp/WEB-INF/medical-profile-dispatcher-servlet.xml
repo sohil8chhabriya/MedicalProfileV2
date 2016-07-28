@@ -12,11 +12,11 @@
     <context:component-scan base-package="mprofile.rest.controllers"/>
 
     <mvc:annotation-driven/>
-    <mvc:resources mapping="/**" location="/app/build/"/>
+    <mvc:resources mapping="/view/**" location="/view/"/>
 
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"/>
-        <property name="suffix" value=".jsp"/>
+        <property name="suffix" value=".html"/>
     </bean>
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:resources mapping="/images/**" location="/static/images/"/>
