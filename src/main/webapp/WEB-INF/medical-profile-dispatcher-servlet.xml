@@ -18,6 +18,7 @@
         <property name="prefix" value="/WEB-INF/view/"/>
         <property name="suffix" value=".html"/>
     </bean>
+
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:resources mapping="/images/**" location="/static/images/"/>
     <mvc:resources mapping="/js/**" location="/static/js/"/>
