@@ -1,6 +1,6 @@
 package mprofile.rest.resources;
 
-import mprofile.entity.User;
+import mprofile.core.entity.User;
 import org.springframework.hateoas.ResourceSupport;
 
 /**
@@ -11,11 +11,11 @@ public class UserResource extends ResourceSupport {
 
     public User toUser(){
         User user = new User();
+        user.setId((int) System.currentTimeMillis() );
         user.setName(name);
         user.setPincode(pincode);
         user.setEmergencyPhone(emergencyPhone);
         user.setPhone(phone);
-        user.setPincode(pincode);
         user.setBloodGroup(bloodGroup);
         user.setAddress(address);
         user.setCountry(country);

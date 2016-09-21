@@ -1,4 +1,4 @@
-package mprofile.entity;
+package mprofile.core.entity;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -10,7 +10,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "userinfo" )
-public class User implements Serializable {
+public class
+User implements Serializable {
     @Id
     @GeneratedValue
     private int id;
@@ -23,7 +24,6 @@ public class User implements Serializable {
     //todo private UserContactDetails userContactDetails;
 
     //ContactDetails Below
-    @Column(name="streetaddress")
     private String address;
     private int pincode;
     private String city;
@@ -31,12 +31,12 @@ public class User implements Serializable {
     @Email
     private String emailId;
     private int phone;
-    private int emergencyPhone;
-
 
     public int getId() {
         return id;
     }
+
+    private int emergencyPhone;
 
     public void setId(int id) {
         this.id = id;

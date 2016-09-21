@@ -1,6 +1,6 @@
 package mprofile.rest.resources.asm;
 
-import mprofile.entity.User;
+import mprofile.core.entity.User;
 import mprofile.rest.controllers.UserController;
 import mprofile.rest.resources.UserResource;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
@@ -11,7 +11,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 /**
  * Created by sohil chhabriya on 25-Apr-15.
  */
-public class UserResourceAsm extends ResourceAssemblerSupport<User, UserResource> {
+    public class UserResourceAsm extends ResourceAssemblerSupport<User, UserResource> {
     public UserResourceAsm() {
         super(UserController.class, UserResource.class);
     }

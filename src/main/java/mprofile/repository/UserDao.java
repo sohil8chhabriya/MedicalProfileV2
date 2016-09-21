@@ -1,6 +1,6 @@
 package mprofile.repository;
 
-import mprofile.entity.User;
+import mprofile.core.entity.User;
 
 import java.util.List;
 

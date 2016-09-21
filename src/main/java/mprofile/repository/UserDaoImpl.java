@@ -1,6 +1,6 @@
 package mprofile.repository;
 
-import mprofile.entity.User;
+import mprofile.core.entity.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

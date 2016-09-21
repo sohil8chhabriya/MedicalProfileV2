@@ -1,4 +1,4 @@
-package mprofile.services.exception;
+package mprofile.core.services.exception;
 
 /**
  * Created by Chris on 6/30/14.

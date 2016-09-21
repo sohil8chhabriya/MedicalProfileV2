@@ -1,12 +1,13 @@
 package mprofile.rest.controllers;
 
-import mprofile.entity.User;
+import mprofile.core.entity.User;
 import mprofile.rest.exceptions.ConflictException;
 import mprofile.rest.resources.UserResource;
 import mprofile.rest.resources.asm.UserResourceAsm;
-import mprofile.services.UserService;
-import mprofile.services.exception.UserExistsException;
+import mprofile.core.services.UserService;
+import mprofile.core.services.exception.UserExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,9 @@
-package mprofile.services.impl;
+package mprofile.core.services.impl;
 
-import mprofile.entity.User;
+import mprofile.core.entity.User;
 import mprofile.repository.UserDao;
-import mprofile.services.UserService;
-import mprofile.services.exception.UserExistsException;
+import mprofile.core.services.UserService;
+import mprofile.core.services.exception.UserExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Created by sohil chhabriya on 27-Apr-15.
  */
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
