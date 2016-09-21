@@ -16,7 +16,7 @@ import javax.transaction.Transactional;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring/business-config.xml")
-public class UserDaoImplTest {
+public class UserInfoDaoImplTest {
 
     @Autowired
     private UserDao user;

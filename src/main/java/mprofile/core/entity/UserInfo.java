@@ -10,8 +10,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "userinfo" )
-public class
-User implements Serializable {
+public class UserInfo implements Serializable {
     @Id
     @GeneratedValue
     private int id;
@@ -129,7 +128,5 @@ User implements Serializable {
     public void setEmergencyPhone(int emergencyPhone) {
         this.emergencyPhone = emergencyPhone;
     }
-
-
 
 }

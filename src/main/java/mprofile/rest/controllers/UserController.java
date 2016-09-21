@@ -1,13 +1,12 @@
 package mprofile.rest.controllers;
 
-import mprofile.core.entity.User;
+import mprofile.core.entity.UserInfo;
 import mprofile.rest.exceptions.ConflictException;
 import mprofile.rest.resources.UserResource;
 import mprofile.rest.resources.asm.UserResourceAsm;
 import mprofile.core.services.UserService;
 import mprofile.core.services.exception.UserExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +39,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<UserResource> getUserById(@PathVariable int id){
         System.out.println("into rest client");
-        User user = userService.getUserById(id);
+        UserInfo user = userService.getUserById(id);
         if (user != null){
             UserResource userResource = new UserResourceAsm().toResource(user);
             System.out.println("==>  " + userResource.getId());
@@ -54,7 +53,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<UserResource> addUser(@RequestBody UserResource addUser){
      try{
-        User user = userService.addUser(addUser.toUser());
+        UserInfo user = userService.addUser(addUser.toUser());
         UserResource res = new UserResourceAsm().toResource(user);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(res.getLink("self").getHref()));
@@ -66,7 +65,7 @@ public class UserController {
 
    /* @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public ResponseEntity<UserResource> getUserByName(@PathVariable String name){
-        User user = userService.getUserByName(name);
+        UserInfo user = userService.getUserByName(name);
         if (user != null){
             UserResource userResource = new UserResourceAsm().toResource(user);
             return new ResponseEntity<UserResource>(userResource, HttpStatus.OK);

@@ -1,6 +1,6 @@
 package mprofile.repository;
 
-import mprofile.core.entity.User;
+import mprofile.core.entity.UserInfo;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -18,23 +18,23 @@ public class UserDaoImpl implements UserDao {
     private EntityManager em;
 
     @Override
-    public User getUserById(int id) {
-        return em.find(User.class,id);
+    public UserInfo getUserById(int id) {
+        return em.find(UserInfo.class,id);
     }
 
     @Override
-    public User getUserByName(String name) {
-        return em.find(User.class,name);
+    public UserInfo getUserByName(String name) {
+        return em.find(UserInfo.class,name);
     }
 
     @Override
-    public User addUser(User user) {
+    public UserInfo addUser(UserInfo user) {
         em.persist(user);
         return user;
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<UserInfo> getAllUsers() {
         Query query = em.createQuery("SELECT ui from userinfo ui");
         return query.getResultList();
     }

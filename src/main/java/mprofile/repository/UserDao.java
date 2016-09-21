@@ -1,6 +1,6 @@
 package mprofile.repository;
 
-import mprofile.core.entity.User;
+import mprofile.core.entity.UserInfo;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import java.util.List;
  * Created by sohil chhabriya on 27-Apr-15.
  */
 public interface UserDao {
-    public User getUserById(int id);
-    public User getUserByName(String name);
-    public User addUser(User user);
-    public List<User> getAllUsers();
+    public UserInfo getUserById(int id);
+    public UserInfo getUserByName(String name);
+    public UserInfo addUser(UserInfo user);
+    public List<UserInfo> getAllUsers();
 }

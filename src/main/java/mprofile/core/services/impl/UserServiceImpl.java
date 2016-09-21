@@ -1,6 +1,6 @@
 package mprofile.core.services.impl;
 
-import mprofile.core.entity.User;
+import mprofile.core.entity.UserInfo;
 import mprofile.repository.UserDao;
 import mprofile.core.services.UserService;
 import mprofile.core.services.exception.UserExistsException;
@@ -20,19 +20,19 @@ public class UserServiceImpl implements UserService {
     private UserDao user;
 
     @Override
-    public User getUserById(int id) {
+    public UserInfo getUserById(int id) {
         return user.getUserById(id);
     }
 
 
     @Override
-    public User getUserByName(String name) {
+    public UserInfo getUserByName(String name) {
         return user.getUserByName(name);
     }
 
     @Override
-    public User addUser(User userData) {
-        User userAccount = getUserById(userData.getId());
+    public UserInfo addUser(UserInfo userData) {
+        UserInfo userAccount = getUserById(userData.getId());
         if(user != null)
         {
             throw new UserExistsException("You already have an account your id with following account details" +
