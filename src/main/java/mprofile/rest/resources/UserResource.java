@@ -11,7 +11,6 @@ public class UserResource extends ResourceSupport {
 
     public UserInfo toUser(){
         UserInfo user = new UserInfo();
-        user.setId((int) System.currentTimeMillis() );
         user.setName(name);
         user.setPincode(pincode);
         user.setEmergencyPhone(emergencyPhone);

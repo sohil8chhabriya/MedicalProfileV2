@@ -15,12 +15,6 @@
 
     <context:component-scan base-package="mprofile.repository"/>
     <context:component-scan base-package="mprofile.core"/>
-    <!--bean id="MyDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="username" value="sa"/>
-        <property name="password" value="sa"/>
-        <property name="url" value="jdbc:h2:mem:test"/>
-        <property name="driverClassName" value="org.h2.Driver"/>
-    </bean-->
 
     <bean id="MyDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
