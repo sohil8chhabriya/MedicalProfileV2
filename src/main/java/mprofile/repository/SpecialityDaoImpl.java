@@ -1,6 +1,7 @@
 package mprofile.repository;
 
 import mprofile.core.entity.Speciality;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,6 +9,7 @@ import javax.persistence.PersistenceContext;
 /**
  * Created by Sohil.Chhabriya on 22-Sep-16.
  */
+@Repository
 public class SpecialityDaoImpl implements SpecialityDao {
 
     @PersistenceContext

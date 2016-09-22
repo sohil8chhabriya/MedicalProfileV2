@@ -20,7 +20,7 @@ public class Speciality {
         return specialityId;
     }
 
-    public void setId(int id) {
+    public void setSpecialityId(int id) {
         this.specialityId = id;
     }
 

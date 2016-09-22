@@ -17,10 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class SpecialityServiceImpl implements SpecialityService{
 
     @Autowired
-    private SpecialityDao speciality;
+    private SpecialityDao specialityDao;
 
     @Override
     public Speciality getSpecialityById(int id) {
-        return speciality.getSpecialityById(id);
+        return specialityDao.getSpecialityById(id);
     }
 }

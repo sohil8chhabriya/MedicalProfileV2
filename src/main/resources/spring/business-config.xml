@@ -16,6 +16,8 @@
     <context:component-scan base-package="mprofile.repository"/>
     <context:component-scan base-package="mprofile.core"/>
 
+    <context:annotation-config />
+
     <bean id="MyDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="username" value="root"/>
@@ -34,7 +36,7 @@
                 <entry key="hibernate.show_sql" value="true"/>
             </map>
         </property>
-        <property name="packagesToScan" value="mprofile.entity"/>
+        <property name="packagesToScan" value="mprofile.core.entity"/>
     </bean>
 
     <tx:annotation-driven/>

@@ -23,6 +23,7 @@ public class UserInfo implements Serializable {
     //todo private UserContactDetails userContactDetails;
 
     //ContactDetails Below
+    @Column(name = "streetAddress")
     private String address;
     private int pincode;
     private String city;
