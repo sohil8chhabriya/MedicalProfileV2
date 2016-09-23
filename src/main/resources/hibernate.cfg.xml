@@ -10,6 +10,6 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.default_schema">MedicalProfile</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <mapping resource="/mprofile.core.entity.*.hbm.xml" />
+        <mapping resource="classpath:entity-mapping/*.hbm.xml" />
         </session-factory>
 </hibernate-configuration>
