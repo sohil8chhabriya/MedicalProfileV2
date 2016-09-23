@@ -18,7 +18,8 @@ import javax.transaction.Transactional;
 @ContextConfiguration("classpath:spring/business-config.xml")
 public class UserInfoDaoImplTest {
 
-    @Autowired
+    @SuppressWarnings("unused")
+	@Autowired
     private UserDao user;
     @Before
     @Transactional

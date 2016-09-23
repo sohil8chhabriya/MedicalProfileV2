@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Visitappointmentschedule" table="visitappointmentschedule" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="appointmentId" type="int">
+            <column name="AppointmentId" />
+            <generator class="assigned" />
+        </id>
+        <property name="date" type="string">
+            <column name="date" length="45" />
+        </property>
+        <property name="time" type="string">
+            <column name="time" length="45" />
+        </property>
+        <property name="delay" type="java.lang.Integer">
+            <column name="delay" />
+        </property>
+        <property name="estimationDuration" type="int">
+            <column name="EstimationDuration" not-null="true" />
+        </property>
+        <property name="actualDuration" type="int">
+            <column name="actualDuration" not-null="true" />
+        </property>
+        <property name="emrId" type="java.lang.Integer">
+            <column name="emrId" />
+        </property>
+        <property name="doctorId" type="java.lang.Integer">
+            <column name="doctorId" />
+        </property>
+        <property name="hospitalId" type="int">
+            <column name="hospitalId" not-null="true" />
+        </property>
+        <property name="caseId" type="int">
+            <column name="caseId" not-null="true" />
+        </property>
+        <property name="causeDescription" type="string">
+            <column name="`Cause description`" length="2000" />
+        </property>
+    </class>
+</hibernate-mapping>

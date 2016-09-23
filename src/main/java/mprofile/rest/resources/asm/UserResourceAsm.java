@@ -20,7 +20,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
     public UserResource toResource(UserInfo user) {
         UserResource userResource = new UserResource();
         userResource.setName(user.getName());
-        userResource.setDateOfBirth(user.getDateOfBirth());
+        userResource.setDateOfBirth(user.getDob());
         userResource.setAddress(user.getAddress());
         userResource.setBloodGroup(user.getBloodGroup());
         userResource.setCity(user.getCity());

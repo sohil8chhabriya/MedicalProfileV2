@@ -20,7 +20,7 @@ public class UserResource extends ResourceSupport {
         user.setCountry(country);
         user.setEmailId(emailId);
         user.setCity(city);
-        user.setDateOfBirth(dateOfBirth);
+        user.setDob(dateOfBirth);
         user.setDateOfRegistration(dateOfRegistration);
         return user;
     }

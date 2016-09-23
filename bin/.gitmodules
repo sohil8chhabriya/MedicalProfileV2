@@ -1,0 +1,3 @@
+[submodule "src/main/webapp/react_redux_webpack"]
+	path = src/main/webapp/react_redux_webpack
+	url = git@github.com:sohil8chhabriya/react_redux_webpack.git

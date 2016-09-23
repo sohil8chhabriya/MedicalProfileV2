@@ -33,7 +33,8 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public List<UserInfo> getAllUsers() {
         Query query = em.createQuery("SELECT ui from userinfo ui");
         return query.getResultList();

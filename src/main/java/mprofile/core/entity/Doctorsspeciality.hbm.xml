@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Doctorsspeciality" table="doctorsspeciality" catalog="MedicalProfile" optimistic-lock="version">
+        <composite-id name="id" class="mprofile.core.entity.DoctorsspecialityId">
+            <key-property name="doctorId" type="int">
+                <column name="doctorId" />
+            </key-property>
+            <key-property name="specialityId" type="int">
+                <column name="specialityId" />
+            </key-property>
+            <key-property name="yearsOfExperience" type="string">
+                <column name="YearsOfExperience" length="100" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

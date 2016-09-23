@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Medication" table="medication" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="medicationId" type="int">
+            <column name="MedicationId" />
+            <generator class="assigned" />
+        </id>
+        <property name="caseId" type="java.lang.Integer">
+            <column name="caseId" />
+        </property>
+        <property name="interactionId" type="java.lang.Integer">
+            <column name="interactionId" />
+        </property>
+        <property name="medication" type="string">
+            <column name="medication" length="200" />
+        </property>
+        <property name="dosage" type="string">
+            <column name="dosage" length="200" />
+        </property>
+        <property name="routineId" type="java.lang.Integer">
+            <column name="routineId" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="isActive" />
+        </property>
+    </class>
+</hibernate-mapping>

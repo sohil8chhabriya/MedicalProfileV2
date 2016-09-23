@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Doctorinfo" table="doctorinfo" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="doctorId" type="int">
+            <column name="doctorId" />
+            <generator class="assigned" />
+        </id>
+        <property name="userId" type="int">
+            <column name="UserId" not-null="true" unique="true" />
+        </property>
+        <property name="doctorsDescription" type="string">
+            <column name="doctorsDescription" length="1000" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.UserInfo" table="userinfo" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="45" not-null="true" />
+        </property>
+        <property name="dob" type="string">
+            <column name="dob" length="45" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="45" not-null="true" />
+        </property>
+        <property name="weight" type="int">
+            <column name="weight" not-null="true" />
+        </property>
+        <property name="height" type="int">
+            <column name="height" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="500" not-null="true" />
+        </property>
+        <property name="pincode" type="int">
+            <column name="pincode" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" not-null="true" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="100" not-null="true" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="emailId" length="100" not-null="true" />
+        </property>
+        <property name="phone" type="int">
+            <column name="phone" not-null="true" />
+        </property>
+        <property name="emergencyPhone" type="java.lang.Integer">
+            <column name="emergencyPhone" />
+        </property>
+        <property name="dateOfRegistration" type="string">
+            <column name="dateOfRegistration" length="45" />
+        </property>
+        <property name="bloodGroup" type="string">
+            <column name="bloodGroup" length="45" not-null="true" />
+        </property>
+        <property name="familyRelationFamilyId" type="java.lang.Integer">
+            <column name="FamilyRelation_familyId" />
+        </property>
+    </class>
+</hibernate-mapping>

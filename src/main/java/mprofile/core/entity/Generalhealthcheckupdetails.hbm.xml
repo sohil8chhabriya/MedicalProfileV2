@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Generalhealthcheckupdetails" table="generalhealthcheckupdetails" catalog="MedicalProfile" optimistic-lock="version">
+        <composite-id name="id" class="mprofile.core.entity.GeneralhealthcheckupdetailsId">
+            <key-property name="id" type="java.lang.Integer">
+                <column name="id" />
+            </key-property>
+            <key-property name="bloodPressureLevels" type="string">
+                <column name="bloodPressureLevels" length="45" />
+            </key-property>
+            <key-property name="sugarLevel" type="string">
+                <column name="sugarLevel" length="45" />
+            </key-property>
+            <key-property name="bodyTemperature" type="string">
+                <column name="bodyTemperature" length="45" />
+            </key-property>
+            <key-property name="pulseRate" type="string">
+                <column name="pulseRate" length="45" />
+            </key-property>
+            <key-property name="pregnencyStatus" type="java.lang.Boolean">
+                <column name="pregnencyStatus" />
+            </key-property>
+            <key-property name="weight" type="java.lang.Integer">
+                <column name="weight" />
+            </key-property>
+            <key-property name="height" type="java.lang.Integer">
+                <column name="height" />
+            </key-property>
+            <key-property name="interactionInteractionId" type="java.lang.Integer">
+                <column name="interaction_interactionId" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

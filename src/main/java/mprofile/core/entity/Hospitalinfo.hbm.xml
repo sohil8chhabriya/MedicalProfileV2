@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Hospitalinfo" table="hospitalinfo" catalog="MedicalProfile" optimistic-lock="version">
+        <composite-id name="id" class="mprofile.core.entity.HospitalinfoId">
+            <key-property name="hospitalId" type="int">
+                <column name="hospitalId" />
+            </key-property>
+            <key-property name="branchOf" type="int">
+                <column name="branchOf" />
+            </key-property>
+        </composite-id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="streetAddress" type="string">
+            <column name="streetAddress" length="500" />
+        </property>
+        <property name="totalBeds" type="java.lang.Integer">
+            <column name="totalBeds" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="emailId" length="100" />
+        </property>
+        <property name="phoneNo" type="java.lang.Integer">
+            <column name="phoneNo" />
+        </property>
+        <property name="dateOfEstablishment" type="string">
+            <column name="date_of_establishment" length="50" />
+        </property>
+        <property name="dateCreated" type="string">
+            <column name="date_created" length="50" />
+        </property>
+        <property name="dateModified" type="string">
+            <column name="date_modified" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

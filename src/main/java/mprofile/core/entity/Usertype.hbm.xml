@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Usertype" table="usertype" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="userTypeId" type="int">
+            <column name="userTypeId" />
+            <generator class="assigned" />
+        </id>
+        <property name="userType" type="string">
+            <column name="userType" length="45" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="2000" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Bloodtest" table="bloodtest" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="bloodTestId" type="int">
+            <column name="bloodTestId" />
+            <generator class="assigned" />
+        </id>
+        <property name="bloodTestReport" type="string">
+            <column name="bloodTestReport" length="200" />
+        </property>
+        <property name="emrId" type="java.lang.Integer">
+            <column name="emrId" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="45" />
+        </property>
+        <property name="time" type="string">
+            <column name="time" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

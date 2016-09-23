@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Interaction" table="interaction" catalog="MedicalProfile" optimistic-lock="version">
+        <composite-id name="id" class="mprofile.core.entity.InteractionId">
+            <key-property name="interactionId" type="int">
+                <column name="InteractionId" />
+            </key-property>
+            <key-property name="caseRecordId" type="int">
+                <column name="CaseRecord_id" />
+            </key-property>
+        </composite-id>
+        <property name="doctorId" type="java.lang.Integer">
+            <column name="doctorId" />
+        </property>
+        <property name="hospitalId" type="java.lang.Integer">
+            <column name="hospitalId" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="50" />
+        </property>
+        <property name="time" type="string">
+            <column name="time" length="50" />
+        </property>
+        <property name="interactionCount" type="int">
+            <column name="interactionCount" not-null="true" />
+        </property>
+        <property name="precautions" type="string">
+            <column name="precautions" length="2000" />
+        </property>
+        <property name="illness" type="string">
+            <column name="illness" length="500" />
+        </property>
+        <property name="patientSymptoms" type="string">
+            <column name="patientSymptoms" length="500" />
+        </property>
+        <property name="closeCase" type="java.lang.Boolean">
+            <column name="closeCase" />
+        </property>
+        <property name="interactionSessionDuration" type="string">
+            <column name="Interaction_session_duration" length="50" />
+        </property>
+        <property name="illnessDurationSession" type="string">
+            <column name="illness_duration_session" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

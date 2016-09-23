@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2016 5:09:00 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="mprofile.core.entity.Urinetest" table="urinetest" catalog="MedicalProfile" optimistic-lock="version">
+        <id name="urineTestId" type="int">
+            <column name="UrineTestId" />
+            <generator class="assigned" />
+        </id>
+        <property name="testDate" type="string">
+            <column name="test_date" length="45" />
+        </property>
+        <property name="appearance" type="string">
+            <column name="appearance" length="45" />
+        </property>
+        <property name="reactions" type="string">
+            <column name="reactions" length="45" />
+        </property>
+        <property name="albumini" type="string">
+            <column name="albumini" length="45" />
+        </property>
+        <property name="sugar" type="string">
+            <column name="sugar" length="45" />
+        </property>
+        <property name="rbcsHpe" type="string">
+            <column name="rbcs_hpe" length="45" />
+        </property>
+        <property name="spermatozoa" type="string">
+            <column name="spermatozoa" length="45" />
+        </property>
+        <property name="totalValue" type="string">
+            <column name="totalValue" length="100" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="45" />
+        </property>
+        <property name="time" type="string">
+            <column name="time" length="45" />
+        </property>
+        <property name="report" type="string">
+            <column name="report" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
