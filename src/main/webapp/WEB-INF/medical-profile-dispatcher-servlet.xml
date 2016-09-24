@@ -13,6 +13,7 @@
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/view/**" location="/view/"/>
+    <mvc:resources mapping="/view/**" location="/reactprojUI/"/>
 
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"/>
