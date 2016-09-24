@@ -13,12 +13,8 @@
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/view/**" location="/view/"/>
-    <mvc:resources mapping="/view/**" location="/reactprojUI/"/>
-
-    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/view/"/>
-        <property name="suffix" value=".html"/>
-    </bean>
+    <mvc:resources mapping="/displays/**" location="/displays/"/>
+    <mvc:resources mapping="/reactprojUI/**" location="/reactprojUI/"/>
 
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:resources mapping="/images/**" location="/static/images/"/>

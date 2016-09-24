@@ -3,11 +3,17 @@ import { render } from 'react-dom';
 // Import routing components
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
-import Main from './common/main.component.jsx'
+// import Main from './common/main.component.jsx'
 import Home from './common/home.component.jsx'
 import About from './common/about.component.jsx'
 import Car from './car/car.component.jsx'
 import CarDetail from './car/car-detail.component.jsx'
+
+import Main from './MedicalComponent/Main.jsx'
+import MedicalHome from './MedicalComponent/Home.jsx'
+import PatientProfile from './MedicalComponent/PatientProfile.jsx'
+import DoctorProfile from './MedicalComponent/DoctorProfile.jsx'
+
 
 const data = [
     {
@@ -61,14 +67,12 @@ const data = [
 
 
 render(
-    <Router history={browserHistory}>
-        <Route component={Main}>
-            <Route path="/" component={Home}/>
-            <Route path="/cars" component={Car} data={data}/>
-            {/* Parameter route*/}
-            <Route path="/cars/:id" component={CarDetail} data={data}/>
-            <Route path="/about" component={About}/>
-        </Route>
-    </Router>,
-    document.getElementById('container')
+     <Router history={browserHistory}>
+            <Route component={Main}>
+                <Route path="/" component={MedicalHome}/>
+                <Route path="/patient/:id" component={PatientProfile} data={data}/>
+                <Route path="/doctor/:id" component={DoctorProfile} data={data}/>
+            </Route>
+        </Router>,
+     document.getElementById('container')
 );

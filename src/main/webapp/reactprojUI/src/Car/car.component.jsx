@@ -3,9 +3,7 @@ import { Link } from 'react-router';
 
 class Car extends Component {
     render(){
-        // Get data from route props
         const cars = this.props.route.data;
-        // Map through cars and return linked cars
         const carNode = cars.map((car) => {
             return (
                 <Link

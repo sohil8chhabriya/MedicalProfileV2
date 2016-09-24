@@ -31,6 +31,11 @@ public class UserController {
     @Autowired
     public UserController(UserService userService){ this.userService = userService;}
 
+    @RequestMapping(value = "/public", method = RequestMethod.GET)
+    public String redirect() {
+        return "redirect:/public";
+    }
+
     @RequestMapping(value="/test", method = RequestMethod.GET)
     public void hello(ModelAndView modelAndView){
        System.out.print("helloWorld" + modelAndView.getViewName());
