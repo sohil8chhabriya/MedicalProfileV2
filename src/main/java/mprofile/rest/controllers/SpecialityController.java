@@ -4,6 +4,7 @@ import mprofile.core.entity.Speciality;
 import mprofile.core.services.SpecialityService;
 import mprofile.rest.resources.SpecialityResource;
 import mprofile.rest.resources.asm.SpecialityResourceAsm;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
