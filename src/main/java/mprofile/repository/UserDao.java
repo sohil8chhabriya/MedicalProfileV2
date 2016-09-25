@@ -12,4 +12,5 @@ public interface UserDao {
     public UserInfo getUserByName(String name);
     public UserInfo addUser(UserInfo user);
     public List<UserInfo> getAllUsers();
+    public boolean getUserAuthString(int id);
 }

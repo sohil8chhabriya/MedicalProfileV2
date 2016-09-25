@@ -1,5 +1,7 @@
 package mprofile.repository;
 
+import mprofile.core.entity.Logincredentails;
+import mprofile.core.entity.LogincredentailsId;
 import mprofile.core.entity.UserInfo;
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +22,15 @@ public class UserDaoImpl implements UserDao {
     @Override
     public UserInfo getUserById(int id) {
         return em.find(UserInfo.class,id);
+    }
+
+    @Override
+    public boolean getUserAuthString(int id){
+        LogincredentailsId logincredentailsId = new LogincredentailsId(id, 7);
+        logincredentailsId.getPassword()
+        Logincredentails logincredentails = new Logincredentails(logincredentailsId);
+
+        return false;
     }
 
     @Override

@@ -10,4 +10,5 @@ public interface UserService {
     public UserInfo getUserById(int id);
     public UserInfo getUserByName(String name);
     public UserInfo addUser(UserInfo user);
+    public boolean isUserAuth(int id);
 }

@@ -24,6 +24,13 @@ public class UserServiceImpl implements UserService {
         return user.getUserById(id);
     }
 
+    @Override
+    public boolean isUserAuth(int id) {
+        if(getUserById(id)!=null){
+
+        }
+        return false;
+    }
 
     @Override
     public UserInfo getUserByName(String name) {

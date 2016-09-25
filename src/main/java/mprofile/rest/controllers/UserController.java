@@ -31,16 +31,6 @@ public class UserController {
     @Autowired
     public UserController(UserService userService){ this.userService = userService;}
 
-    @RequestMapping(value = "/public", method = RequestMethod.GET)
-    public String redirect() {
-        return "redirect:/public";
-    }
-
-    @RequestMapping(value="/test", method = RequestMethod.GET)
-    public void hello(ModelAndView modelAndView){
-       System.out.print("helloWorld" + modelAndView.getViewName());
-    }
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<UserResource> getUserById(@PathVariable int id){
         System.out.println("into rest client");
@@ -55,7 +45,27 @@ public class UserController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value="/auth/", method = RequestMethod.POST)
+    public boolean isUserAuth(@RequestBody UserResource addUser){
+        System.out.println(">>Comment: authUser");
+        int userId = 1;
+        if (userService.isUserAuth(userId)) {
+            return true;
+        }
+        else {
+            if (authUser(userId)) {
+
+            }
+
+        }
+        return false;
+    }
+
+    private boolean authUser(int id){
+        return false;
+    }
+
+    @RequestMapping(value="/add", method = RequestMethod.POST)
     public ResponseEntity<UserResource> addUser(@RequestBody UserResource addUser){
      try{
         UserInfo user = userService.addUser(addUser.toUser());
