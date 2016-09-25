@@ -4,3 +4,6 @@
 [submodule "sb-admin-react"]
 	path = sb-admin-react
 	url = git@github.com:start-react/sb-admin-react.git
+[submodule "MedicalProfile-UI"]
+	path = MedicalProfile-UI
+	url = git@github.com:sohil8chhabriya/MedicalProfile-UI.git
