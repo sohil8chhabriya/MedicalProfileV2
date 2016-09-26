@@ -1,25 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Sep 25, 2016 7:14:33 PM by Hibernate Tools 5.2.0.Beta1 -->
+<!-- Generated Sep 25, 2016 11:30:03 PM by Hibernate Tools 5.2.0.Beta1 -->
 <hibernate-mapping>
     <class name="mprofile.core.entity.Logincredentails" table="logincredentails" catalog="MedicalProfile" optimistic-lock="version">
-        <composite-id name="id" class="mprofile.core.entity.LogincredentailsId">
-            <key-property name="id" type="int">
-                <column name="Id" />
-            </key-property>
-            <key-property name="password" type="string">
-                <column name="Password" length="45" />
-            </key-property>
-            <key-property name="statusId" type="java.lang.Integer">
-                <column name="statusId" />
-            </key-property>
-            <key-property name="userTypeId" type="int">
-                <column name="userTypeId" />
-            </key-property>
-            <key-property name="acountCreateDate" type="string">
-                <column name="acountCreateDate" length="45" />
-            </key-property>
-        </composite-id>
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="Password" length="45" />
+        </property>
+        <property name="statusId" type="java.lang.Integer">
+            <column name="statusId" />
+        </property>
+        <property name="userTypeId" type="int">
+            <column name="userTypeId" not-null="true" />
+        </property>
+        <property name="acountCreateDate" type="string">
+            <column name="acountCreateDate" length="45" />
+        </property>
     </class>
 </hibernate-mapping>

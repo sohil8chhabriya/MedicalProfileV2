@@ -1,6 +1,7 @@
 package mprofile.rest.resources;
 
 import mprofile.core.entity.UserInfo;
+import mprofile.core.entity.UserinfoId;
 import org.springframework.hateoas.ResourceSupport;
 
 /**
@@ -9,8 +10,8 @@ import org.springframework.hateoas.ResourceSupport;
 
 public class UserResource extends ResourceSupport {
 
-    public UserInfo toUser(){
-        UserInfo user = new UserInfo();
+    public UserinfoId toUser(){
+        UserinfoId user = new UserinfoId();
         user.setName(name);
         user.setPincode(pincode);
         user.setEmergencyPhone(emergencyPhone);

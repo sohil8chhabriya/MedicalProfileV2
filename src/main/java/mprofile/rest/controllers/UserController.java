@@ -1,14 +1,18 @@
 package mprofile.rest.controllers;
 
+import mprofile.core.entity.LogincredentailsId;
 import mprofile.core.entity.UserInfo;
+import mprofile.core.entity.UserinfoId;
 import mprofile.rest.exceptions.ConflictException;
 import mprofile.rest.resources.UserResource;
 import mprofile.rest.resources.asm.UserResourceAsm;
 import mprofile.core.services.UserService;
 import mprofile.core.services.exception.UserExistsException;
+import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,7 +38,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<UserResource> getUserById(@PathVariable int id){
         System.out.println("into rest client");
-        UserInfo user = userService.getUserById(id);
+        UserinfoId user = userService.getUserById(id);
         if (user != null){
             UserResource userResource = new UserResourceAsm().toResource(user);
             System.out.println("==>  " + userResource.getId());
@@ -45,30 +49,19 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value="/auth/", method = RequestMethod.POST)
-    public boolean isUserAuth(@RequestBody UserResource addUser){
-        System.out.println(">>Comment: authUser");
-        int userId = 1;
-        if (userService.isUserAuth(userId)) {
-            return true;
-        }
-        else {
-            if (authUser(userId)) {
-
-            }
-
-        }
-        return false;
-    }
-
-    private boolean authUser(int id){
-        return false;
+    @RequestMapping(value="/auth/{id}/{password}/", method = RequestMethod.GET)
+    public ResponseEntity<Object> isUserAuth(@PathVariable int id, @PathVariable String password){
+        System.out.println(">>Comment: authUser: " + password);
+        JSONObject obj = new JSONObject();
+        boolean isUserAuth = userService.isUserAuth(id, password);
+        obj.put("auth", isUserAuth);
+        return new ResponseEntity<Object>(obj, HttpStatus.OK);
     }
 
     @RequestMapping(value="/add", method = RequestMethod.POST)
     public ResponseEntity<UserResource> addUser(@RequestBody UserResource addUser){
      try{
-        UserInfo user = userService.addUser(addUser.toUser());
+        UserinfoId user = userService.addUser(addUser.toUser());
         UserResource res = new UserResourceAsm().toResource(user);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(res.getLink("self").getHref()));

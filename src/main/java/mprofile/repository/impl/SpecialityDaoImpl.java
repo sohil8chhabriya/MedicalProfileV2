@@ -1,6 +1,7 @@
-package mprofile.repository;
+package mprofile.repository.impl;
 
 import mprofile.core.entity.Speciality;
+import mprofile.repository.SpecialityDao;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

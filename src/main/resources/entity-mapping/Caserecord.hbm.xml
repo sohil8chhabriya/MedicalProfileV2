@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Sep 25, 2016 7:14:33 PM by Hibernate Tools 5.2.0.Beta1 -->
+<!-- Generated Sep 25, 2016 11:30:03 PM by Hibernate Tools 5.2.0.Beta1 -->
 <hibernate-mapping>
     <class name="mprofile.core.entity.Caserecord" table="caserecord" catalog="MedicalProfile" optimistic-lock="version">
         <id name="id" type="int">

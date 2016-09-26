@@ -1,6 +1,7 @@
 package mprofile.rest.resources.asm;
 
 import mprofile.core.entity.UserInfo;
+import mprofile.core.entity.UserinfoId;
 import mprofile.rest.controllers.UserController;
 import mprofile.rest.resources.UserResource;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
@@ -11,13 +12,13 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 /**
  * Created by sohil chhabriya on 25-Apr-15.
  */
-    public class UserResourceAsm extends ResourceAssemblerSupport<UserInfo, UserResource> {
+    public class UserResourceAsm extends ResourceAssemblerSupport<UserinfoId, UserResource> {
     public UserResourceAsm() {
         super(UserController.class, UserResource.class);
     }
 
     @Override
-    public UserResource toResource(UserInfo user) {
+    public UserResource toResource(UserinfoId user) {
         UserResource userResource = new UserResource();
         userResource.setName(user.getName());
         userResource.setDateOfBirth(user.getDob());

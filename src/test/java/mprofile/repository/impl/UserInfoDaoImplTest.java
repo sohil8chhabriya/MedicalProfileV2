@@ -1,6 +1,6 @@
 package mprofile.repository.impl;
 
-import mprofile.repository.UserDao;
+import mprofile.repository.UserInfoDao;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ public class UserInfoDaoImplTest {
 
     @SuppressWarnings("unused")
 	@Autowired
-    private UserDao user;
+    private UserInfoDao user;
     @Before
     @Transactional
     @Rollback(false)
