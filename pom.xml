@@ -104,7 +104,6 @@ http://maven.apache.org/POM/4.0.0 ">
             <version>1.9.4</version>
         </dependency>
 
-
         <!--Hibernate and database dependencies-->
         <dependency>
             <groupId>com.h2database</groupId>

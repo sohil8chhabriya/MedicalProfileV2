@@ -66,12 +66,12 @@ public class UserController {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(res.getLink("self").getHref()));
         return new ResponseEntity<UserResource>(res, headers, HttpStatus.CREATED);
-    } catch(UserExistsException exception) {
+        } catch(UserExistsException exception) {
         throw new ConflictException(exception);
     }
     }
 
-   /* @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+   @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public ResponseEntity<UserResource> getUserByName(@PathVariable String name){
         UserInfo user = userService.getUserByName(name);
         if (user != null){
@@ -80,5 +80,5 @@ public class UserController {
         }
         else
             return new ResponseEntity<UserResource>(HttpStatus.NOT_FOUND);
-    }*/
+    }
 }
