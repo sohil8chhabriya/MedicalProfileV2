@@ -73,7 +73,7 @@ public class UserController {
 
    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public ResponseEntity<UserResource> getUserByName(@PathVariable String name){
-        UserInfo user = userService.getUserByName(name);
+       UserinfoId user = userService.getUserByName(name);
         if (user != null){
             UserResource userResource = new UserResourceAsm().toResource(user);
             return new ResponseEntity<UserResource>(userResource, HttpStatus.OK);
